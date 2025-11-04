@@ -5,7 +5,9 @@
 @import url("https://fonts.cdnfonts.com/css/agaleoz");
 
 /* Larken Demo Font */
-@import url(https://db.onlinewebfonts.com/c/10775ee5d3135eef8153899cf2a85211?family=Larken+DEMO+Light);
+@import url("https://db.onlinewebfonts.com/c/87a0b96df9f33e523f2ebc6a48b02e7a?family=Larken+DEMO");
+
+
 
 /* Bellina Font */
 
@@ -13,7 +15,7 @@
     --playfair-font: "Playfair Display", serif;
     --playball-font: "Playball", cursive;
     --agaleoz-font: "Agaleoz", sans-serif;
-    --larken-font: "Larken DEMO", sans-serif;
+    --larken-font: "Larken DEMO", serif;
     --belina-font: "Bellina Seamy", sans-serif;
     --hdrTop-bg: #c8a77f;
     --active-txt-color: #f2dec5;
@@ -32,7 +34,8 @@ html {
     background: black;
 }
 
-a {
+a,
+span {
     text-decoration: none;
     display: inline-block;
 }
@@ -67,8 +70,13 @@ img {
 }
 
 .mid-container {
+    max-width: 1820px;
+}
+
+.small-container {
     max-width: 1761;
 }
+
 
 /* Header Section */
 
@@ -132,10 +140,23 @@ img {
     font-family: var(--belina-font);
     font-size: 20px;
     color: var(--primary-color);
+    transition: 0.3s linear;
+
+    &:hover {
+        transform: translateY(2px) scale(1.05);
+    }
 }
 
 .nav-contact>span:first-child {
     margin-right: 15px;
+}
+
+.nav-contact>span:first-child {
+    transition: .5s ease;
+}
+
+.nav-contact:hover span:first-child {
+    transform: rotate(45deg);
 }
 
 /* Nav Links */
@@ -154,6 +175,12 @@ img {
     font-weight: 500;
     text-transform: capitalize;
     color: var(--primary-color);
+    transition: 0.3s linear;
+
+    &:hover {
+        transform: scale(1.1) translateY(3px);
+        color: var(--primary-color);
+    }
 }
 
 .nav-item>.nav-link.active {
@@ -187,7 +214,14 @@ img {
 .rightNav-link {
     color: var(--primary-color);
     font-size: 20px;
+    transition: 0.3s linear;
+
+    &:hover {
+        transform: scale(1.1) translateY(2px);
+    }
 }
+
+
 
 .offcanvas {
     flex-direction: row;
@@ -337,9 +371,10 @@ img {
 }
 
 .bnr-btn {
-    display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    display: inline-flex;
 }
 
 .primary-btn {
@@ -567,14 +602,11 @@ img {
     background: linear-gradient(to right, #c2baba, #F5E4D2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     position: relative;
     z-index: 1;
 }
 
-.secondary-btn:hover {
-    box-shadow: 0 0 0 5px #2195f360;
-}
+
 
 .secondary-btn:active {
     scale: 0.95;
@@ -630,7 +662,7 @@ img {
 }
 
 .title-3 {
-
+    text-transform: capitalize;
     font-family: var(--playfair-font);
     font-size: clamp(1.8rem, 4vw, 4.233rem);
     font-weight: bold;
@@ -642,6 +674,8 @@ img {
     display: flex;
     justify-content: end;
 }
+
+
 
 .tertiary-btn {
     font-family: var(--playfair-font);
@@ -670,6 +704,15 @@ img {
 .tertiary-btn:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.button-box {
+    display: inline-flex;
+    align-items: center;
+}
+
+.button-box:hover .arrow-btn>span {
+    transform: rotate(360deg);
 }
 
 .swiper1 {
@@ -797,8 +840,269 @@ img {
 .personalized-sec {
     border: 1px solid var(--border-color);
     background: black;
-    padding: 110px 0 103px;
+    padding: 50px 0;
 }
+
+.full-cntn {
+    padding: 60px 32px;
+
+}
+
+.personalizedLeft-cntn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.personalizedTop-cntn {
+    max-width: 413px;
+    border-bottom: 1px solid rgba(229, 209, 185, 0.3);
+
+}
+
+.title-4 {
+    color: var(--border-color);
+    font-family: var(--playfair-font);
+    font-weight: normal;
+    font-size: clamp(1.8rem, 1.5vw + 1.45rem, 3.08rem);
+}
+
+.personalizedBottom-cntn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(229, 209, 185, 0.3);
+}
+
+
+.personalizedBottom-cntn>h2.title-4 {
+    font-weight: 600;
+    font-size: clamp(2rem, 1.5vw + 1rem, 3.698rem);
+    font-style: italic;
+
+
+}
+
+
+.personalizedBottom-cntn>p {
+    font-family: var(--playball-font);
+    font-size: clamp(2rem, 1.5vw + 1rem, 3.698rem);
+    color: var(--border-color);
+}
+
+.personalizedImg-1 {
+    max-width: 514px;
+}
+
+
+
+.personalizedRight-cntn>h2.title-2 {
+    max-width: 259px;
+    color: var(--border-color);
+}
+
+.personalizedRight-cntn>p {
+    font-size: clamp(1rem, 1vw + 1rem, 1.85rem);
+    color: #F8E6D0;
+    margin-top: 42px;
+}
+
+.midBottom-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 275px;
+}
+
+.personalizedContent-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.midBottom-left>.title-4>span {
+    font-family: var(--playball-font);
+}
+
+.personalizedImg-2 {
+    max-width: 514px;
+    margin-left: auto;
+}
+
+.personalizedBtn-box {
+    display: flex;
+    align-items: center;
+}
+
+
+.personalized-btn {
+    color: #DBB28F;
+    font-size: 24px;
+}
+
+.personalized-btn>span {
+    transform: rotate(-30deg);
+    transition-duration: 2s;
+    margin-left: 10px;
+
+}
+
+.personalized-btn:hover span {
+    transform: rotate(360deg);
+}
+
+/* Collection Section */
+.collection-sec {
+    padding: 46px 0;
+    background: black;
+    border: 1px solid var(--border-color);
+    margin: 19px 0;
+}
+
+
+.collection-title>.title-3 {
+    color: var(--active-txt-color);
+    font-weight: normal;
+    font-family: var(--larken-font);
+}
+
+
+.collection-btn {
+    font-family: var(--larken-font);
+    color: var(--active-txt-color);
+    font-weight: normal;
+}
+
+.swiper2 {
+    margin-top: 100px;
+}
+
+.swiper2-cntn {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.swiper2-title {
+    margin-top: 20px;
+}
+
+.swiper2-title>p {
+    color: var(--border-color);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: clamp(1.7rem, 2vw + 1rem, 2.35rem);
+    white-space: nowrap;
+}
+
+/* Festive Collection Section */
+.festive-sec {
+    padding: 46px 0;
+    background: black;
+    border: 1px solid var(--border-color);
+    font-family: var(--larken-font);
+}
+
+
+
+.swiper3 {
+    margin-top: 100px;
+}
+
+/* Asthetic Jewellery Section */
+.asthetic-sec {
+    background: black;
+    padding: 30px 0 24px;
+    border: 1px solid var(--border-color);
+    margin: 19px 0;
+}
+
+.asthetic-full {
+    padding: 70px 0;
+}
+
+.asthetic-cntn>.title-3 {
+    font-family: var(--larken-font);
+
+}
+
+
+.asthetic-cntn>p {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    color: var(--border-color);
+    font-weight: 100;
+}
+
+.asthetic-cntn>p:nth-child(2) {
+    margin: 78px 0 35px;
+}
+
+.asthetic-btn {
+    border-radius: 0;
+    margin-top: 35px;
+    border: 1px solid var(--border-color);
+}
+
+.asthetic-btn::after,
+.asthetic-btn>span:last-child {
+    border-radius: 0;
+
+}
+
+
+.astheticImg-box {
+    max-width: 926px;
+    position: relative;
+}
+
+.asthetic-img {
+    max-width: 764px;
+    margin: 0 auto;
+}
+
+
+
+.circle-top {
+    max-width: 200px;
+    min-height: 200px;
+    border-radius: 50%;
+    border: 10px solid black;
+    position: absolute;
+    top: -5%;
+    right: 0;
+
+}
+
+.circle-bottom {
+    max-width: 150px;
+    min-height: 150px;
+    border-radius: 50%;
+    border: 10px solid black;
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+}
+
+
+/* Party Collection Section */
+
+.party-sec {
+    padding: 46px 0;
+    border: 1px solid var(--border-color);
+
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive Section */
 @media screen and (max-width:1448px) {
@@ -807,6 +1111,14 @@ img {
 
     .secondary-btn {
         padding: 19px 17px;
+    }
+}
+
+@media screen and (max-width:1400px) {
+
+    /* Asthetic Section */
+    .asthetic-img {
+        max-width: 650px;
     }
 }
 
@@ -849,11 +1161,38 @@ img {
         right: 2%;
     }
 
-    /* .bnrCard-cntn>p {
-        margin: 59px 0 120px;
-    } */
+    /* Personalized Section */
+
+    .personalizedBottom-cntn {
+        margin: 30px 0 50px;
+    }
 
 
+
+    .personalizedImg-1 {
+        margin: 0 auto 50px;
+    }
+
+    .personalizedRight-cntn>h2.title-2 {
+        max-width: 100%;
+    }
+
+    .personalizedRight-cntn {
+        margin-bottom: 50px;
+    }
+
+    /* Asthetic Section */
+    .astheticImg-box {
+        margin: 40px auto 0;
+    }
+
+    .circle-top {
+        right: 6%;
+    }
+
+    .circle-bottom {
+        left: 8%;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -965,9 +1304,26 @@ img {
         min-height: 547px;
     }
 
+    /* Pesonalized Section */
+    .personalized-col {
+        order: 2;
+    }
+
+    .personalizedContent-box {
+        justify-content: space-around;
+    }
+
+    /* Asthetic Section */
+    .circle-top {
+        max-width: 170px;
+        min-height: 170px;
+    }
+
+    .asthetic-img {
+        max-width: 578px;
+    }
+
 }
-
-
 
 @media screen and (max-width:768px) {
 
@@ -985,6 +1341,24 @@ img {
         margin: 2.7rem auto 0;
     }
 
+    .tertiary-btn {
+        font-size: 25px;
+        margin-right: 0;
+    }
+
+    /* Asthetic Section */
+    .asthetic-img {
+        max-width: 456px;
+    }
+
+    .circle-top {
+        max-width: 142px;
+        min-height: 142px;
+    }
+
+    .circle-bottom {
+        left: 5%;
+    }
 
 }
 
@@ -1025,6 +1399,11 @@ img {
         min-height: 512px;
     }
 
+    .secondary-btn {
+        padding: 14px 17px;
+        font-size: 20px;
+    }
+
     .lastCard-cntn {
         flex-direction: column;
         align-items: center;
@@ -1033,5 +1412,56 @@ img {
 
     .lastCard-cntn>p {
         margin-bottom: 20px;
+    }
+
+    /* Jewellery Section */
+    .jwl-right {
+        margin-top: 20px;
+    }
+
+    .tertiary-btn {
+        font-size: 22px;
+    }
+
+    /* Personalized Section */
+    .full-cntn {
+        padding: 20px 10px;
+    }
+
+    /* Collection Section */
+    .swiper2,
+    .swiper3 {
+        margin-top: 50px;
+    }
+
+
+    /* Asthetic Section */
+    .asthetic-img {
+        max-width: 270px;
+    }
+
+    .circle-top {
+        max-width: 110px;
+        min-height: 110px;
+        right: 14%;
+    }
+
+    .circle-bottom {
+        max-width: 100px;
+        min-height: 100px;
+        left: 14%;
+    }
+}
+
+@media screen and (max-width:442px) {
+
+    /* Asthetic Section */
+    .circle-top {
+        top: -9%;
+        right: 0%;
+    }
+
+    .circle-bottom {
+        left: 0;
     }
 }

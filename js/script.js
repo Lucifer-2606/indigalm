@@ -30,13 +30,60 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 10,
     centeredSlides: true,
     loop: true,
-    
+
     breakpoints: {
       768: {
         slidesPerView: 2,
       },
-      1200: {
+      1024: {
         slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+  });
+
+  // Swiper 2
+  const swiper2 = new Swiper(".swiper2", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    // centeredSlides: true,
+    loop: true,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+  });
+  // Swiper 3
+  const swiper3 = new Swiper(".swiper3", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    // centeredSlides: true,
+    loop: true,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 4,
         spaceBetween: 30,
       },
     },
