@@ -63,10 +63,12 @@ img {
 }
 
 .large-container {
-    max-width: 1920px;
+    max-width: 1940px;
 }
 
-
+.mid-container {
+    max-width: 1761;
+}
 
 /* Header Section */
 
@@ -506,7 +508,7 @@ img {
     background: linear-gradient(330deg, #F6F5F5, #F5E4D2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: clamp(2rem, 2.5vw + 1rem, 5rem);
+    font-size: clamp(2rem, 1.5vw + 1rem, 3.08rem);
 }
 
 .bnrCard-cntn>p {
@@ -791,6 +793,13 @@ img {
 }
 
 
+/* Personalized Section */
+.personalized-sec {
+    border: 1px solid var(--border-color);
+    background: black;
+    padding: 110px 0 103px;
+}
+
 /* Responsive Section */
 @media screen and (max-width:1448px) {
 
@@ -1009,7 +1018,7 @@ img {
     }
 
     .title-1 {
-        max-width: 327px;
+        max-width: 328px;
     }
 
     .bnrCard {
