@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Swiper 5
   const swiper5 = new Swiper(".swiper5", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     centeredSlides: true,
@@ -129,6 +129,23 @@ document.addEventListener("DOMContentLoaded", () => {
       disableOnInteraction: false,
     },
     speed: 6000,
+    breakpoints: {
+      1024: {
+        // large screens
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      768: {
+        // tablets
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      576: {
+        // small devices
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+    },
   });
 
   // Wishlist
