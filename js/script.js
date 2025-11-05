@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 30,
     loop: true,
     centeredSlides: true,
+    freeMode: true,
     effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
@@ -141,6 +142,49 @@ document.addEventListener("DOMContentLoaded", () => {
       576: {
         slidesPerView: 1,
         spaceBetween: 15,
+      },
+    },
+  });
+  // Swiper 6
+  const swiper6 = new Swiper(".swiper6", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    freeMode: true,
+    centeredSlides: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 150,
+      modifier: 1,
+      slideShadows: true,
+    },
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    speed: 2000,
+    breakpoints: {
+      1200: {
+        slidesPerView: 5,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        coverflowEffect: {
+          rotate: 30,
+        },
+      },
+      576: {
+        slidesPerView: 2,
+        coverflowEffect: {
+          rotate: 0,
+        },
       },
     },
   });

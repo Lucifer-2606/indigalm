@@ -24,6 +24,13 @@
     --tertiary-color: #F1DABF;
     --card-txt-color: #D9CEC1;
     --border-color: #E5D1B9;
+    --duration: 3s;
+    --shine-angle: 90deg;
+    --shine-color: rgba(255, 255, 255, 0.4);
+    --shine-background: linear-gradient(var(--shine-angle),
+            rgba(255, 255, 255, 0) 0%,
+            var(--shine-color) 50%,
+            rgba(255, 255, 255, 0) 100%);
 }
 
 body,
@@ -77,6 +84,9 @@ img {
     max-width: 1761;
 }
 
+.mini-container {
+    max-width: 1645px;
+}
 
 /* Header Section */
 
@@ -310,12 +320,57 @@ img {
     margin-top: 10px;
 }
 
+
+
+
 .bnr-img {
+
     max-width: 477px;
     margin: 24px auto 44px;
 }
 
+.shine-img {
+    position: relative;
+    overflow: hidden;
 
+}
+
+
+.shine-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--shine-background);
+    animation: shine var(--duration) ease-in-out infinite;
+
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.4;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
 
 .left-bnrImg {
     max-width: 239px;
@@ -499,6 +554,7 @@ img {
     perspective: 1000px;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: grab;
+    border: 1px solid var(--border-color);
 }
 
 .bnrCard:hover {
@@ -1135,6 +1191,13 @@ img {
     font-size: clamp(1rem, 2.5vw, 1.692rem);
 }
 
+.swiper5 .swiper-wrapper {
+    flex-direction: row-reverse;
+}
+
+.swiper5 {
+    direction: ltr;
+}
 
 .swiper5-cntn {
     padding: 87px 39px;
@@ -1145,17 +1208,18 @@ img {
 }
 
 .swiper5-bg1 {
-    background: url(../assets/index/swiper5-bg1.png) no-repeat center/cover;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(162, 121, 72, 0.3));
+
 
 }
 
 .swiper5-bg2 {
-    background: url(../assets/index/swiper5-bg2.png) no-repeat center/cover;
+    background: rgba(23, 16, 6, 0.5);
 
 }
 
 .swiper5-bg3 {
-    background: url(../assets/index/swiper5-bg3.png) no-repeat center/cover;
+    background: linear-gradient(225deg, rgba(181, 100, 2, 0.3), rgba(0, 0, 0, 0.3));
 
 }
 
@@ -1204,6 +1268,58 @@ img {
     filter: blur(2px) brightness(0.8);
     transform: scale(0.95);
     z-index: 1;
+}
+
+/* Follow Section */
+.follow-sec {
+    background: url(../assets/index/follow-bg.png) no-repeat center/cover;
+    padding: 65px 0;
+    border: 1px solid var(--border-color);
+}
+
+
+.title-6 {
+    font-family: var(--larken-font);
+    font-size: clamp(1rem, 3vw, 3.077rem);
+    color: var(--border-color);
+    text-align: center;
+}
+
+.follow-hdr {
+    margin-bottom: 46px;
+}
+
+.swiper6-cntn {
+    text-align: center;
+
+}
+
+.swiper6-img {
+    max-width: 318px;
+}
+
+.swiper6 .swiper-slide {
+    transition: all 0.6s ease;
+    filter: blur(6px) brightness(0.4);
+    transform: scale(0.9);
+    opacity: 0.4;
+}
+
+/* Center (active) card — fully visible */
+.swiper6 .swiper-slide-active {
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+
+/* Adjacent slides (slightly visible, still blurred) */
+.swiper6 .swiper-slide-next,
+.swiper6 .swiper-slide-prev {
+    filter: blur(3px) brightness(0.6);
+    transform: scale(0.95);
+    opacity: 0.7;
+    z-index: 2;
 }
 
 /* Responsive Section */
