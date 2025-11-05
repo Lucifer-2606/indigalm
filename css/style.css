@@ -114,7 +114,8 @@ img {
 }
 
 .hdrTop-cntn>p {
-    font-size: 20px;
+    font-size: clamp(1.2rem, 1.9vw, 1.56rem);
+    white-space: nowrap;
     background: linear-gradient(to right, #000000, #663f3a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -299,6 +300,7 @@ img {
     background: linear-gradient(180deg, #FFFFFF, #F1DABF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    white-space: nowrap;
 }
 
 
