@@ -88,6 +88,48 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
   });
+  // Swiper 4
+  const swiper4 = new Swiper(".swiper4", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    // centeredSlides: true,
+    loop: true,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+  });
+
+  // Swiper 5
+  const swiper5 = new Swiper(".swiper5", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    centeredSlides: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 300,
+      modifier: 1,
+      slideShadows: true,
+    },
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    speed: 6000,
+  });
 
   // Wishlist
   const heart = document.querySelectorAll(".fa-heart");

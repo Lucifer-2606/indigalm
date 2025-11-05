@@ -1096,15 +1096,113 @@ img {
 
 }
 
+.swiper4 {
+    margin-top: 100px;
+}
 
 
+/* About Section */
+
+.abt-sec {
+    padding: 54px 0;
+    border: 1px solid var(--border-color);
+    margin: 19px 0;
+    background: url(../assets/index/abtBG.png) no-repeat center/cover;
+}
+
+.abt-wrpr {
+    padding: 30px 36px 0;
+}
 
 
+.abtTitle-box {
+    max-width: 658px;
+    margin: 12px auto 22px;
+}
+
+.abt-title {
+    max-width: 828px;
+    margin: 0 auto 61px;
+    text-align: center;
+}
+
+.abtTitle-box>.title-3 {
+    font-size: clamp(1.153rem, 3.5vw, 3.846rem);
+}
+
+.abt-title>p {
+    color: var(--border-color);
+    font-size: clamp(1rem, 2.5vw, 1.692rem);
+}
 
 
+.swiper5-cntn {
+    padding: 87px 39px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
 
+.swiper5-bg1 {
+    background: url(../assets/index/swiper5-bg1.png) no-repeat center/cover;
 
+}
 
+.swiper5-bg2 {
+    background: url(../assets/index/swiper5-bg2.png) no-repeat center/cover;
+
+}
+
+.swiper5-bg3 {
+    background: url(../assets/index/swiper5-bg3.png) no-repeat center/cover;
+
+}
+
+.swiper5-img {
+    max-width: 100px;
+}
+
+.swiper5-title {
+    margin: 31px 0 23px;
+}
+
+.title-5 {
+    font-size: clamp(1rem, 2.3vw, 2.308rem);
+    white-space: nowrap;
+    color: #F8DAB7;
+}
+
+.stars {
+    display: flex;
+    font-size: 20px;
+    background: linear-gradient(to bottom, #ffffff 0%, #ffd700 50%, #b8860b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.swiper5-cntn>p {
+    font-size: clamp(1rem, 1.8vw, 1.538rem);
+    font-weight: 100;
+    color: var(--border-color);
+}
+
+.swiper5 .swiper-slide {
+    transition: all 0.5s ease;
+    filter: blur(4px) brightness(0.6);
+    transform: scale(0.9);
+}
+
+.swiper5 .swiper-slide-active {
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+    z-index: 2;
+}
+
+.swiper5 .swiper-slide-next,
+.swiper5 .swiper-slide-prev {
+    filter: blur(2px) brightness(0.8);
+    transform: scale(0.95);
+    z-index: 1;
+}
 
 /* Responsive Section */
 @media screen and (max-width:1448px) {
@@ -1432,7 +1530,8 @@ img {
 
     /* Collection Section */
     .swiper2,
-    .swiper3 {
+    .swiper3,
+    .swiper4 {
         margin-top: 50px;
     }
 
