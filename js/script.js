@@ -188,6 +188,43 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
   });
+  // Swiper 7
+  const swiper7 = new Swiper(".swiper7", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    freeMode: true,
+    centeredSlides: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 300,
+      modifier: 1,
+      slideShadows: true,
+    },
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    speed: 4000,
+    breakpoints: {
+      1200: {
+        slidesPerView: 3,
+      },
+
+      768: {
+        slidesPerView: 2,
+      },
+      576: {
+        slidesPerView: 1,
+      },
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 
   // Wishlist
   const heart = document.querySelectorAll(".fa-heart");
