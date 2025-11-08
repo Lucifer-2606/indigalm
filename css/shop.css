@@ -40,6 +40,7 @@ body {
 /* Shopping Section */
 .shop-sec {
     padding: 106px 0 0;
+    margin-bottom: 36px;
 }
 
 .shop-top {
@@ -379,7 +380,7 @@ body {
     margin: 33px 0 27px;
 }
 
-.cardName>p {
+.shop-items {
     font-size: clamp(1.2rem, 2vw, 1.375rem);
     color: var(--border-color);
     letter-spacing: 0.1em;
@@ -445,6 +446,8 @@ body {
 .gridCard-box {
     max-width: 387px;
 }
+
+
 
 /* Responsive Section */
 @media screen and (max-width:992px) {
