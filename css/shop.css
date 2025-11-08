@@ -461,6 +461,9 @@ body {
         }
     }
 
+    .gridCard-box {
+        margin: 0 auto;
+    }
 
 }
 
@@ -502,9 +505,7 @@ body {
         }
     }
 
-    .gridCard-box {
-        margin: 0 auto;
-    }
+
 
     .pageNumber-btn {
         padding: 10px 15px;
