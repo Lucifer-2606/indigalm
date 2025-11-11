@@ -130,8 +130,6 @@ body {
 }
 
 .srch-input {
-    border: none;
-    outline: none;
     background: transparent;
     color: var(--shop-primary-color);
     font-size: 20px;
@@ -168,9 +166,7 @@ body {
 .listItem-btn {
     font-size: clamp(1.1rem, 2vw, 1.928rem);
     color: var(--shop-primary-color);
-    border: none;
     background: transparent;
-    outline: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -184,8 +180,6 @@ body {
 }
 
 .tags-btn {
-    border: none;
-    outline: none;
     background: var(--shop-primary-color);
     color: var(--shop-secondary-color);
     font-size: 17px;
@@ -303,12 +297,10 @@ body {
 .sort-btn {
     background: var(--border-color);
     color: #512C00;
-    border: none;
     font-size: clamp(1rem, 2vw, 1.5rem);
     padding: 16px 8px;
     display: flex;
     align-items: top;
-    outline: none;
     transition: all 0.3s ease;
     letter-spacing: 0.2em;
     font-weight: bold;
@@ -398,8 +390,6 @@ body {
 }
 
 .addTo-cart {
-    border: none;
-    outline: none;
     background: rgba(229, 209, 185, 0.4);
     color: rgba(229, 209, 185, 0.8);
     font-size: 17px;
@@ -414,8 +404,6 @@ body {
 }
 
 .pageNumber-btn {
-    border: none;
-    outline: none;
     background: transparent;
     transition: 0.3s linear;
     color: var(--border-color, #e5d1b9);

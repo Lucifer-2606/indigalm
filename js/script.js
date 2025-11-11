@@ -11,10 +11,12 @@ window.onload = function () {
       content.classList.remove("onload-hidden");
       initCounterObserver();
     }, 500);
-  }, 2000);
+  }, 1000);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Luxy Initialize
+  luxy.init();
   // Animated Text Dynamic
   function typeEffect(element, speed) {
     let text = element.textContent.trim();
@@ -148,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
+      pauseOnMouseEnter: false,
     },
     speed: 4000,
     breakpoints: {
@@ -187,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
+      pauseOnMouseEnter: false,
     },
     speed: 2000,
     breakpoints: {
@@ -234,6 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
+      pauseOnMouseEnter: false,
     },
     speed: 4000,
     breakpoints: {
@@ -448,4 +453,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setActiveButton(buttons[startIndex]);
     }
   });
+  
+  luxy.refresh();
 });

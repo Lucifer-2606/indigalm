@@ -1,0 +1,318 @@
+:root {
+    --playfair-font: "Playfair Display", serif;
+    --playball-font: "Playball", cursive;
+    --agaleoz-font: "Agaleoz", sans-serif;
+    --larken-font: "Larken DEMO", serif;
+    --belina-font: 'Bellina', serif;
+    --hdrTop-bg: #c8a77f;
+    --active-txt-color: #f2dec5;
+    --primary-color: #ffffff;
+    --secondary-color: #FAEAD7;
+    --tertiary-color: #F1DABF;
+    --card-txt-color: #D9CEC1;
+    --border-color: #E5D1B9;
+    --duration: 3s;
+    --shine-angle: 90deg;
+    --shine-color: rgba(255, 255, 255, 0.4);
+    --shine-background: linear-gradient(var(--shine-angle),
+            rgba(255, 255, 255, 0) 0%,
+            var(--shine-color) 50%,
+            rgba(255, 255, 255, 0) 100%);
+
+    --page-prinary-color: #F4E3CE;
+
+    --animation-duration: 12s;
+    --services-totalItems: 3;
+    --page-secondary-color: #FDDFBC;
+    --shop-animation-duration: 20s;
+    --shop-services-totalItems: 5;
+    --shop-primary-color: #F3E8DB;
+    --shop-secondary-color: #7D4400;
+    --bellMt-font: 'bellMt';
+}
+
+@font-face {
+    font-family: 'bellMt';
+    src: url(../assets/bell-mtFont/bell-mt.ttf);
+    font-weight: bold;
+
+}
+
+body {
+    background: url(../assets/contact/contactUs-bg.png) no-repeat center/cover;
+    font-family: var(--belina-font);
+    font-weight: bold;
+}
+
+/* Contact Us Banner Section */
+
+.contact-sec {
+    padding: 106px 0 0;
+    margin: 117px 0 46px;
+}
+
+.contactUs-cntn {
+    color: var(--border-color);
+    max-width: 774px;
+}
+
+.top-cntn>p:nth-child(1) {
+    font-family: var(--agaleoz-font);
+    font-size: clamp(1.2rem, 2.2vw, 2.07rem);
+    letter-spacing: 0.2em;
+}
+
+.contactTitle-1 {
+    font-family: var(--larken-font);
+    font-size: clamp(1.6rem, 2.8vw, 2.77rem);
+    letter-spacing: 0.2em;
+    margin: 43px 0 19px;
+}
+
+.top-cntn>p:nth-child(3) {
+    font-size: clamp(1rem, 1.8vw, 1.54rem);
+}
+
+.middle-cntn {
+    margin: 61px 0;
+}
+
+
+
+.middle-cntn>p:nth-child(1) {
+    letter-spacing: 0.2em;
+    font-family: var(--agaleoz-font);
+    font-size: clamp(1.3rem, 2.5vw, 2.3rem);
+    margin-bottom: 30px;
+}
+
+.middleCntn-timing {
+    letter-spacing: 0.2em;
+    font-family: var(--larken-font);
+    font-size: clamp(1rem, 1.8vw, 1.54rem);
+}
+
+.middleCntn-timing>p:nth-child(2) {
+    margin: 17px 0;
+}
+
+.middleCntn-timing>p:nth-child(3) {
+    font-weight: 300;
+}
+
+.bottomImg {
+    display: flex;
+    align-items: center;
+}
+
+.contactImg {
+    max-width: 238px;
+    border: 1px solid var(--border-color);
+}
+
+.contactImg:nth-child(2) {
+    margin: 0 30px 0;
+}
+
+.contactUs-box {
+    max-width: 862px;
+    background: #E2B989;
+    padding: 40px 30px;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.contactUs-form {
+    max-width: 802px;
+    margin: 0 auto;
+}
+
+.form-inputs {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.contactUs-input {
+    width: 100%;
+    padding: 33px 20px 15px;
+    background: #F1DABF;
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    color: #371E00;
+    border-radius: 6px;
+}
+
+.form-inputs>label {
+    position: absolute;
+    bottom: 50%;
+    left: 20px;
+    transform: translateY(50%);
+    color: #371E00;
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    font-family: var(--belina-font);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+
+.contactUs-input:focus+label,
+.contactUs-input:not(:placeholder-shown)+label {
+    bottom: 90%;
+    transform: translateY(80%);
+    font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+    color: #371E00;
+}
+
+
+.contactUs-input::placeholder {
+    color: transparent;
+}
+
+textarea.contactUs-input {
+    height: 146px;
+    resize: none;
+}
+
+.contact-btn {
+    border-radius: 0;
+    background: black;
+    color: white;
+}
+
+.contact-btn>span:nth-child(2) {
+    background: #D9D9D9;
+    color: black;
+}
+
+.contact-btn>.readMore-circle2 {
+    background: #D9D9D9;
+}
+
+.contact-btn:hover .readMore-circle2 {
+    border-radius: 0;
+
+}
+
+/* Location Section */
+.location-sec {
+    padding: 81px 0;
+}
+
+.location-cntn {
+    color: var(--border-color);
+    font-family: var(--agaleoz-font);
+    margin-bottom: 58px;
+}
+
+.location-cntn>p:first-child {
+    font-size: clamp(1.2rem, 2.2vw, 2.07rem);
+    letter-spacing: 0.2em;
+    margin-bottom: 39px;
+}
+
+
+.locationTitle-2 {
+    font-size: clamp(1.8rem, 2.5vw + 1rem, 3.08rem);
+    letter-spacing: 0.1em;
+}
+
+.location-icon {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background: var(--border-color);
+    color: #572F00;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location-name {
+    color: var(--border-color);
+}
+
+.location-name>p:first-child {
+    font-family: var(--bellMt-font);
+    font-size: clamp(1.8rem, 2vw + 1rem, 2.31rem);
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+}
+
+.location-name>p:last-child {
+    font-size: clamp(1.3rem, 1.5vw + 0.8rem, 1.69rem);
+    letter-spacing: 0.1em;
+    font-family: var(--belina-font);
+}
+
+
+/* Map Section */
+.map-sec {
+    padding: 46px 0 27px;
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    height: min(56.25vw, 600px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+
+/* Responsive Section */
+
+@media screen and (max-width:1200px) {
+
+    /* Contact Us Banner Section */
+    .contactUs-box {
+        margin: 30px auto 0;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .contact-sec {
+        padding: 50px 0 0;
+    }
+
+    .contactUs-input {
+        padding: 15px 10px;
+    }
+
+    .contactUs-box {
+        padding: 30px 20px;
+    }
+
+    textarea.contactUs-input {
+        height: 115px;
+    }
+
+    .form-inputs {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+
+
+    /* Location Section */
+    .location-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 27px;
+    }
+
+    /* Map Section */
+    .location-sec {
+        padding: 0;
+    }
+
+
+
+}

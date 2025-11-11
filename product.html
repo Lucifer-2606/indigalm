@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IndiGlam Blogs</title>
+    <!-- Swiper CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <!-- Bootstrap Icon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Page Custom CSS -->
+    <link rel="stylesheet" href="./css/page.css" />
+    <!-- Shop Custom CSS -->
+    <link rel="stylesheet" href="./css/shop.css" />
+    <!-- Blog Custom CSS -->
+    <link rel="stylesheet" href="./css/blog.css" />
+    <!-- Product Custom CSS -->
+    <link rel="stylesheet" href="./css/product.css">
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div id="onload-loader">
+        <div class="pyramid-loader">
+            <div class="wrapper">
+                <span class="side side1"></span>
+                <span class="side side2"></span>
+                <span class="side side3"></span>
+                <span class="side side4"></span>
+                <span class="side side5"></span>
+                <span class="side side6"></span>
+                <span class="side side7"></span>
+                <span class="side side8"></span>
+                <span class="shadow"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="onload-content" class="onload-hidden">
+        <div id="luxy">
+            <!-- Header Section -->
+            <header class="hdr-sec">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container large-container">
+                        <div class="hdr-logo text-center py-2">
+                            <a class="navbar-brand" href="./index.html">
+                                <img src="./assets/index/brand-logo.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="bottomNavbar-cntn d-flex">
+                            <!-- Left -->
+                            <div class="nav-left d-flex">
+                                <a href="tel:+0123569095" class="nav-contact">
+                                    <span><i class="bi bi-telephone"></i> </span>
+                                    <span>(01) 235 69095</span>
+                                </a>
+                            </div>
+                            <!-- Center Menu -->
+                            <div class="offcanvas offcanvas-end justify-content-center" tabindex="-1"
+                                id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                                <div class="offcanvas-header me-auto">
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                                <ul class="navbar-nav mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./page.html">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="./shop.html">Shop</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./blog.html">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./contact.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Right -->
+                            <div class="nav-right">
+                                <ul class="rightNav-list d-flex align-items-center">
+                                    <li class="rightNav-item">
+                                        <a href="" class="rightNav-link">
+                                            <i class="fa-regular fa-user"></i>
+                                        </a>
+                                    </li>
+                                    <li class="rightNav-item">
+                                        <a href="" class="rightNav-link">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li class="rightNav-item">
+                                        <a href="" class="rightNav-link">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Toggler on mobile -->
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                <span class="navbar-toggler-icon">
+                                    <i class="fa-solid fa-bars"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <!-- Product Section -->
+                <section class="product-sec">
+                    <div class="box">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6 col-12">
+                                    <div class="productImg-box">
+                                        <div class="product-img">
+                                            <img src="./assets/product/product-img.png" alt="">
+                                        </div>
+                                        <div class="image-lightbox" id="imageLightbox">
+                                            <img src="./assets/product/product-img.png" alt="Full Product View">
+                                        </div>
+                                        <div class="productImg-list">
+                                            <ul class="product-list d-flex">
+                                                <li class="produtList-item">
+                                                    <img src="./assets/product/01.png" alt="">
+                                                </li>
+                                                <li class="produtList-item">
+                                                    <img src="./assets/product/02.png" alt="">
+                                                </li>
+                                                <li class="produtList-item">
+                                                    <img src="./assets/product/03.png" alt="">
+                                                </li>
+                                                <li class="produtList-item">
+                                                    <img src="./assets/product/04.png" alt="">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-12 mt-5 mt-xl-0">
+                                    <div class="product-cntn">
+                                        <h2 class="productTitle-1">
+                                            Daimond Ring
+                                        </h2>
+                                        <p>Product Code : ERNOB41588</p>
+                                        <div class="product-discount">
+                                            <p>Save: Rs 7,531 </p>
+                                        </div>
+                                        <p>20% savings on making charges</p>
+                                        <p>Weight will increase as per the Size.<a href=""
+                                                class="productSize-link">Check Sizing Comparison</a>
+                                        </p>
+                                        <h2 class="product-title2">
+                                            Price Breakup
+                                        </h2>
+                                        <div class="price-breakup d-flex
+                                        align-items-center">
+                                            <div class="brkup">
+                                                <p>Diamond</p>
+                                                <p>₹ 20,234</p>
+                                            </div>
+                                            <div class="brkup">
+                                                <p>making</p>
+                                                <p>₹ 2308</p>
+                                            </div>
+                                            <div class="brkup">
+                                                <p>Diamond</p>
+                                                <p>₹ 1243</p>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <p>Rs 50,000</p>
+                                            <p>Availability: In stock</p>
+                                        </div>
+                                        <div class="addToCart d-flex align-items-center">
+                                            <div class="quantity-box">
+                                                <button class="qty-btn" id="decrease">−</button>
+                                                <span class="qty-number" id="quantity">1</span>
+                                                <button class="qty-btn" id="increase">+</button>
+                                            </div>
+                                            <button class="continue-btn">Continue</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Product Details Section -->
+                <section class="details-sec">
+                    <div class="container">
+                        <h1 class="productDetails-title">
+                            Product Details
+                        </h1>
+                        <div class="row">
+                            <div class="col-xl-4 col-12">
+                                <div class="detailsCntn-box">
+                                    <h2 class="detailsTitle-2">
+                                        Basic information
+                                    </h2>
+                                    <ul class="details-list">
+                                        <li class="details-item">
+                                            <span>product type</span>
+                                            <span>earring</span>
+                                        </li>
+                                        <li class="details-item">
+                                            <span>brands</span>
+                                            <span>Malabar</span>
+                                        </li>
+                                        <li class="details-item">
+                                            <span>Gender</span>
+                                            <span>women</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-12">
+                                <div class="detailsCntn-box">
+                                    <h2 class="detailsTitle-2">
+                                        Metal Information
+                                    </h2>
+                                    <ul class="details-list">
+                                        <li class="details-item">
+                                            <span>Metal Purity</span>
+                                            <span>22 KT (916)</span>
+                                        </li>
+                                        <li class="details-item">
+                                            <span>Metal Colour</span>
+                                            <span>White</span>
+                                        </li>
+                                        <li class="details-item">
+                                            <span>Gross Weight ( g. )</span>
+                                            <span>2.646</span>
+                                        </li>
+                                        <li class="details-item">
+                                            <span>Net Weight ( g. )</span>
+                                            <span>2.646</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-12">
+                                <div class="detailsCntn-box">
+                                    <h2 class="detailsTitle-2">
+                                        Certification Details
+                                    </h2>
+                                    <ul class="details-list">
+                                        <li class="details-item">
+                                            <span>Diamond Certification</span>
+                                            <span>BIS Hallmark 916</span>
+                                        </li>
+                                        <li class="details-item">
+                                            <span>Hallmark License No</span>
+                                            <span>HM/C-7790174629</span>
+                                        </li>
+                                        <li class="details-item">
+                                            <span>Stone Information</span>
+                                        </li>
+                                        <li class="details-item">
+                                            <span>Stone Weight ( g. )</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Luxy JS -->
+    <script src="path/to/luxy.js" charset="utf-8"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <!-- Vanilla JS -->
+    <script src="./js/script.js"></script>
+    <!-- Product Page JS -->
+    <script src="./js/product.js"></script>
+</body>
+
+</html>

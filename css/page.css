@@ -21,7 +21,7 @@
 
     --page-prinary-color: #F4E3CE;
 
-    --animation-duration: 18s;
+    --animation-duration: 9s;
     --services-totalItems: 3;
     --page-secondary-color: #FDDFBC;
 }
@@ -161,7 +161,7 @@ body {
     }
 
     100% {
-        right: 100%;
+        right: 122%;
     }
 }
 
@@ -179,11 +179,6 @@ body {
 }
 
 
-.sponsorhip-animation:hover .autoScroll-item {
-    animation-play-state: paused;
-
-}
-
 
 /* About Section */
 .pageAbt-sec {
@@ -194,8 +189,8 @@ body {
     max-width: 769px;
     border: 1px solid var(--border-color);
     position: relative;
-    border-top-left-radius: 345px;
-    border-top-right-radius: 345px;
+    border-top-left-radius: 382px;
+    border-top-right-radius: 382px;
 }
 
 .cel-img::after {
@@ -227,7 +222,7 @@ body {
     bottom: -8%;
     right: -10%;
     border: 1px solid var(--border-color);
-z-index: 2;
+    z-index: 2;
 
 }
 
@@ -455,8 +450,7 @@ z-index: 2;
     /* About Section */
     .cel-img {
         margin: 0 auto;
-        border-top-left-radius: 382px;
-        border-top-right-radius: 382px;
+
     }
 
     .celCircle-img {
@@ -542,7 +536,7 @@ z-index: 2;
         }
 
         100% {
-            right: 220%;
+            right: 250%;
         }
     }
 
@@ -602,6 +596,7 @@ z-index: 2;
         max-width: 250px;
 
     }
+
 
 }
 
