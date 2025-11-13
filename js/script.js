@@ -15,10 +15,6 @@ window.onload = function () {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  
-
-
-
   // Animated Text Dynamic
   function typeEffect(element, speed) {
     let text = element.textContent.trim();
@@ -263,21 +259,57 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Wishlist
-  const heart = document.querySelectorAll(".fa-heart");
-  heart.forEach((heart) => {
+  const hearts = document.querySelectorAll(".fa-heart");
+  const popup = document.getElementById("wishlistPopup");
+
+  hearts.forEach((heart) => {
     heart.addEventListener("click", () => {
+      // Toggle heart
       heart.classList.toggle("fa-solid");
       heart.classList.toggle("active");
+
+      // Show popup only when item is added
+      if (heart.classList.contains("fa-solid")) {
+        showPopup("Your item added to wishlist");
+      } else {
+        showPopup("Removed from wishlist");
+      }
     });
   });
+
+  function showPopup(message) {
+    popup.textContent = message;
+    popup.classList.add("show");
+
+    // Auto hide after 2 seconds
+    setTimeout(() => {
+      popup.classList.remove("show");
+    }, 1000);
+  }
+
   // Add to cart
   const plusButtons = document.querySelectorAll(".bottomSwiper-right");
+  const cartButton = document.getElementById("cartPopup");
 
   plusButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      btn.classList.toggle("active");
+      const isActive = btn.classList.toggle("active");
+      if (isActive) {
+        showPopup("Your item added to cart");
+      } else {
+        showPopup("Removed from cart");
+      }
     });
   });
+
+  function showPopup(message) {
+    cartButton.textContent = message;
+    cartButton.classList.add("show");
+
+    setTimeout(() => {
+      cartButton.classList.remove("show");
+    }, 1000);
+  }
 
   // Counting Numbers
   const counters = document.querySelectorAll(".count");
@@ -454,5 +486,15 @@ document.addEventListener("DOMContentLoaded", () => {
       updateVisibleButtons();
       setActiveButton(buttons[startIndex]);
     }
+  });
+
+  // Add To Cart in shop page
+  const addToCartBtn = document.querySelectorAll(".addTo-cart");
+
+  addToCartBtn.forEach((toCartBtn) => {
+    toCartBtn.addEventListener("click", () => {
+      toCartBtn.textContent = "Go to Cart";
+      toCartBtn.disabled = true;
+    });
   });
 });

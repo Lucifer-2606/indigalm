@@ -109,6 +109,32 @@ textarea {
     max-width: 1719px;
 }
 
+/* Popup Section */
+.wishlist-popup,
+.cart-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(162, 121, 72, 0.7) 100%);
+    border-radius: 10px;
+    color: var(--border-color);
+    padding: 12px 20px;
+    font-size: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.wishlist-popup.show,
+.cart-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Loading Screen */
 #onload-loader {
     position: fixed;
@@ -116,43 +142,15 @@ textarea {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom right, #1a0f00 0%, #000000 100%);
-    z-index: 999;
+    background: linear-gradient(45deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(162, 121, 72, 0.3) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-/* Add glowing background behind pyramid */
-#onload-loader::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.25), transparent 70%);
-    transform: translate(-50%, -50%);
-    filter: blur(80px);
-    animation: glowPulse 4s ease-in-out infinite alternate;
-    z-index: 0;
-}
-
-/* Smooth gold glow animation */
-@keyframes glowPulse {
-    0% {
-        opacity: 0.4;
-        transform: translate(-50%, -50%) scale(1);
-    }
-
-    100% {
-        opacity: 0.7;
-        transform: translate(-50%, -50%) scale(1.15);
-    }
-}
-
-/* Hide loader after load */
 .onload-hidden {
     display: none !important;
 }
@@ -169,97 +167,241 @@ textarea {
     opacity: 0;
 }
 
-/* Pyramid Loader */
-.pyramid-loader {
-    width: 100px;
-    height: 100px;
+/* Loading Screen Animation */
+.loader {
+    --main-size: 6.5em;
+    --shine-color: #c824f5cd;
+    --shadow-color: #fdf9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
     position: relative;
-    display: block;
-    transform-style: preserve-3d;
-    transform: rotateX(-20deg);
-    z-index: 1;
+    font-size: var(--main-size);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--text-color);
+    width: 7.3em;
+    height: 1em;
+    filter: drop-shadow(0 0 0.05em var(--shine-color));
 }
 
-.wrapper {
+.loader .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+.loader .text:nth-child(1) {
+    clip-path: polygon(0% 0%, 11.11% 0%, 11.11% 100%, 0% 100%);
+    font-size: calc(var(--main-size) / 20);
+    margin-left: -2.1em;
+    opacity: 0.6;
+}
+
+.loader .text:nth-child(2) {
+    clip-path: polygon(11.11% 0%, 22.22% 0%, 22.22% 100%, 11.11% 100%);
+    font-size: calc(var(--main-size) / 16);
+    margin-left: -0.98em;
+    opacity: 0.7;
+}
+
+.loader .text:nth-child(3) {
+    clip-path: polygon(22.22% 0%, 33.33% 0%, 33.33% 100%, 22.22% 100%);
+    font-size: calc(var(--main-size) / 13);
+    margin-left: -0.33em;
+    opacity: 0.8;
+}
+
+.loader .text:nth-child(4) {
+    clip-path: polygon(33.33% 0%, 44.44% 0%, 44.44% 100%, 33.33% 100%);
+    font-size: calc(var(--main-size) / 11);
+    margin-left: -0.05em;
+    opacity: 0.9;
+}
+
+.loader .text:nth-child(5) {
+    clip-path: polygon(44.44% 0%, 55.55% 0%, 55.55% 100%, 44.44% 100%);
+    font-size: calc(var(--main-size) / 10);
+    margin-left: 0em;
+    opacity: 1;
+}
+
+.loader .text:nth-child(6) {
+    clip-path: polygon(55.55% 0%, 66.66% 0%, 66.66% 100%, 55.55% 100%);
+    font-size: calc(var(--main-size) / 11);
+    margin-left: 0.05em;
+    opacity: 0.9;
+}
+
+.loader .text:nth-child(7) {
+    clip-path: polygon(66.66% 0%, 77.77% 0%, 77.77% 100%, 66.66% 100%);
+    font-size: calc(var(--main-size) / 13);
+    margin-left: 0.33em;
+    opacity: 0.8;
+}
+
+.loader .text:nth-child(8) {
+    clip-path: polygon(77.77% 0%, 88.88% 0%, 88.88% 100%, 77.77% 100%);
+    font-size: calc(var(--main-size) / 16);
+    margin-left: 0.98em;
+    opacity: 0.7;
+}
+
+.loader .text:nth-child(9) {
+    clip-path: polygon(88.88% 0%, 100% 0%, 100% 100%, 88.88% 100%);
+    font-size: calc(var(--main-size) / 20);
+    margin-left: 2.1em;
+    opacity: 0.6;
+}
+
+.loader .text span {
+    animation:
+        scrolling 2s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite,
+        shadow 2s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite;
+}
+
+.loader .text:nth-child(1) span {
+    background: linear-gradient(to right,
+            var(--active-txt-color) 4%,
+            var(--shadow-color) 7%);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader .text:nth-child(2) span {
+    background: linear-gradient(to right,
+            var(--active-txt-color) 9%,
+            var(--shadow-color) 13%);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader .text:nth-child(3) span {
+    background: linear-gradient(to right,
+            var(--active-txt-color) 15%,
+            var(--shadow-color) 18%);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader .text:nth-child(4) span {
+    background: linear-gradient(to right,
+            var(--active-txt-color) 20%,
+            var(--shadow-color) 23%);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader .text:nth-child(6) span {
+    background: linear-gradient(to right,
+            var(--shadow-color) 29%,
+            var(--active-txt-color) 32%);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader .text:nth-child(7) span {
+    background: linear-gradient(to right,
+            var(--shadow-color) 34%,
+            var(--active-txt-color) 37%);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader .text:nth-child(8) span {
+    background: linear-gradient(to right,
+            var(--shadow-color) 39%,
+            var(--active-txt-color) 42%);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader .text:nth-child(9) span {
+    background: linear-gradient(to right,
+            var(--shadow-color) 45%,
+            var(--active-txt-color) 48%);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader .line {
     position: relative;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 0.05em;
+    width: calc(var(--main-size) / 2);
+    margin-top: 0.9em;
+    border-radius: 0.05em;
+}
+
+.loader .line::before {
+    content: "";
+    position: absolute;
     height: 100%;
-    transform-style: preserve-3d;
-    animation: spin 2s ease-in-out infinite;
+    width: 100%;
+    background-color: var(--hdrTop-bg);
+    opacity: 0.3;
 }
 
-@keyframes spin {
+.loader .line::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--hdrTop-bg);
+    border-radius: 0.05em;
+    transform: translateX(-90%);
+    animation: wobble 2s cubic-bezier(0.5, 0.8, 0.5, 0.2) infinite;
+}
+
+@keyframes wobble {
+    0% {
+        transform: translateX(-90%);
+    }
+
+    50% {
+        transform: translateX(90%);
+    }
+
     100% {
-        transform: rotateY(360deg);
+        transform: translateX(-90%);
     }
 }
 
-.pyramid-loader .wrapper .side {
-    width: 100%;
-    height: calc(100% * 167 / 240);
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    transform-origin: center top;
-    background: conic-gradient(from 0deg, #c99700, #ffec80, #f1b500, #c99700);
+@keyframes scrolling {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
-/* Pyramid Sides */
-.pyramid-loader .wrapper .side1 {
-    transform: rotateZ(-45deg) rotateY(90deg);
-}
+@keyframes shadow {
+    0% {
+        background-position: -98% 0;
+    }
 
-.pyramid-loader .wrapper .side2 {
-    transform: rotateZ(45deg) rotateY(90deg);
-}
-
-.pyramid-loader .wrapper .side3 {
-    transform: rotateX(45deg);
-}
-
-.pyramid-loader .wrapper .side4 {
-    transform: rotateX(-45deg);
-}
-
-/* Pyramid Base */
-.pyramid-loader .wrapper .side5 {
-    transform: rotateZ(-45deg) rotateY(90deg) rotateX(180deg);
-    top: 148%;
-}
-
-.pyramid-loader .wrapper .side6 {
-    transform: rotateZ(45deg) rotateY(90deg) rotateX(180deg);
-    top: 148%;
-}
-
-.pyramid-loader .wrapper .side7 {
-    transform: rotateX(45deg) rotateX(180deg);
-    top: 148%;
-}
-
-.pyramid-loader .wrapper .side8 {
-    transform: rotateX(-45deg) rotateX(180deg);
-    top: 148%;
-}
-
-/* Pyramid shadow */
-.pyramid-loader .wrapper .shadow {
-    width: 66%;
-    height: 66%;
-    position: absolute;
-    top: 55%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    transform: rotateX(90deg) translateZ(-40px);
-    background: rgba(201, 151, 0, 0.5);
-    /* soft gold tint */
-    filter: blur(25px);
+    100% {
+        background-position: 102% 0;
+    }
 }
 
 
@@ -1189,25 +1331,24 @@ textarea {
     margin-left: auto;
 }
 
-.personalizedBtn-box {
-    display: flex;
-    align-items: center;
+.leftButton {
+    justify-content: start;
 }
 
-
-.personalized-btn {
+.leftButton>.button-box>.tertiary-btn {
+    font-size: clamp(1.4rem, 1.2vw + 1rem, 1.846rem);
+    margin-right: 15px;
     color: #DBB28F;
-    font-size: 24px;
 }
 
-.personalized-btn>span {
+.rotate-arrow {
+    font-size: clamp(1.1rem, 1.1vw + 1rem, 1.5rem);
+    color: #DBB28F;
     transform: rotate(-30deg);
-    transition-duration: 2s;
-    margin-left: 10px;
-
+    transition: 1.5s ease;
 }
 
-.personalized-btn:hover span {
+.button-box:hover .rotate-arrow {
     transform: rotate(360deg);
 }
 
@@ -1312,6 +1453,7 @@ textarea {
     border-radius: 0;
 
 }
+
 
 
 .astheticImg-box {
@@ -1525,6 +1667,8 @@ textarea {
     opacity: 0.8;
     z-index: 2;
 }
+
+
 
 /* Footer Section */
 .ftr-sec {

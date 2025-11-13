@@ -287,7 +287,7 @@ body {
     padding: 27px 22px;
     max-width: 447px;
     width: 100%;
-    font-size: clamp(1.2rem, 2.3vw, 2.3rem);
+    font-size: clamp(1.1rem, 2.3vw, 2.3rem);
     font-weight: bold;
 }
 
