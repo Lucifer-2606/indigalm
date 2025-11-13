@@ -15,39 +15,10 @@ window.onload = function () {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Luxy Initialize
-  let luxyActive = false;
+  
 
-  function handleLuxy() {
-    const luxyElement =
-      document.querySelector("#luxy") || document.querySelector(".luxy");
 
-    if (window.innerWidth > 768) {
-      if (!luxyActive) {
-        luxy.init();
-        luxyActive = true;
-        document.body.classList.add("luxy-active");
-      }
-    } else {
-      if (luxyActive) {
-        luxy.destroy();
-        luxyActive = false;
-        document.body.classList.remove("luxy-active");
 
-        // ✅ Reset transform & scroll position
-        if (luxyElement) {
-          luxyElement.style.transform = "none";
-          luxyElement.style.willChange = "auto";
-        }
-      }
-    }
-  }
-
-  // Run on load
-  handleLuxy();
-
-  // Run on resize
-  window.addEventListener("resize", handleLuxy);
   // Animated Text Dynamic
   function typeEffect(element, speed) {
     let text = element.textContent.trim();

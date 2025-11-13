@@ -39,22 +39,35 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // AddToCart Increasing or Decreasing Number
   const decreaseBtn = document.getElementById("decrease");
-  const increaseBtn = document.getElementById("increase");
-  const quantityDisplay = document.getElementById("quantity");
+const increaseBtn = document.getElementById("increase");
+const quantityDisplay = document.getElementById("quantity");
+const totalPriceEl = document.getElementById("totalPrice");
 
-  let quantity = 1;
+let quantity = 1;
+const basePrice = 50000; // your product price
 
-  increaseBtn.addEventListener("click", () => {
-    quantity++;
+// Function to update price
+function updatePrice() {
+  const total = basePrice * quantity;
+  totalPriceEl.textContent = `Rs ${total.toLocaleString()}`;
+}
+
+// Increase
+increaseBtn.addEventListener("click", () => {
+  quantity++;
+  quantityDisplay.textContent = quantity;
+  updatePrice();
+});
+
+// Decrease
+decreaseBtn.addEventListener("click", () => {
+  if (quantity > 1) {
+    quantity--;
     quantityDisplay.textContent = quantity;
-  });
+    updatePrice();
+  }
+});
 
-  decreaseBtn.addEventListener("click", () => {
-    if (quantity > 1) {
-      quantity--;
-      quantityDisplay.textContent = quantity;
-    }
-  });
 
   // Product Details Switching
   const tabLinks = document.querySelectorAll(".tab-link");

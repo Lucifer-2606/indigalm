@@ -1999,10 +1999,6 @@ textarea {
 
 @media screen and (max-width:768px) {
 
-    #luxy {
-        transform: none !important;
-        will-change: auto !important;
-    }
 
     /* Banner Section */
     .title-1 {
