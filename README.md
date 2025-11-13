@@ -1,4 +1,4 @@
-# 🖤 IndiGlam – Modern Jewellery E-Commerce Website 🖤
+# 🖤 IndiGlam – Modern Jewellery E-Commerce Website
 
 
 <p align="center">
