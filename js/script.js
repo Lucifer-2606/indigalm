@@ -15,7 +15,6 @@ window.onload = function () {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  
   // Animated Text Dynamic
   function typeEffect(element, speed) {
     let text = element.textContent.trim();
@@ -218,12 +217,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Swiper 7
   const swiper7 = new Swiper(".swiper7", {
     slidesPerView: 1,
-    spaceBetween: 30,
     loop: true,
     freeMode: true,
     allowTouchMove: false,
     simulateTouch: false,
-    grabCursor: false,
     slideToClickedSlide: false,
     centeredSlides: true,
     effect: "coverflow",
@@ -232,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
       stretch: 0,
       depth: 300,
       modifier: 1,
-      slideShadows: true,
+      slideShadows: false,
     },
     autoplay: {
       delay: 0,
@@ -254,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     pagination: {
       el: ".swiper-pagination",
-      clickable: true,
+      clickable: false,
       dynamicBullets: true,
     },
   });

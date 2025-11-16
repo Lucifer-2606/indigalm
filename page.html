@@ -24,7 +24,7 @@
 
 <body>
     <!-- Loading Screen -->
-     <div id="onload-loader">
+    <div id="onload-loader">
         <div class="loader">
             <div class="text"><span>Loading</span></div>
             <div class="text"><span>Loading</span></div>
@@ -41,7 +41,7 @@
     </div>
 
     <div id="onload-content" class="onload-hidden">
-        <div>
+        <div id="luxy">
             <!-- Header Section -->
             <header class="hdr-sec">
                 <nav class="navbar navbar-expand-lg">
@@ -198,7 +198,8 @@
                                         <img src="./assets/page/about-img.png" alt="" />
                                     </figure>
 
-                                    <div class="celCircle-img">
+                                    <div class="celCircle-img luxy-el"
+                                    data-speed-y="5" data-offset="-170">
                                         <img src="./assets/page/about-circle.png" alt="" />
                                     </div>
                                 </div>
@@ -312,7 +313,7 @@
                                     <figure class="luxury-img shine-img m-auto m-xl-0">
                                         <img src="./assets/page/luxury-img.png" alt="" />
                                     </figure>
-                                    <div class="luxury-circleImg">
+                                    <div class="luxury-circleImg luxy-el" data-speed-y="5" data-offset="-250">
                                         <img src="./assets/page/luxury-circle.png" alt="" />
                                     </div>
                                 </div>
@@ -479,7 +480,7 @@
             </footer>
         </div>
     </div>
-       <!-- Swiper JS -->
+    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -487,6 +488,8 @@
         crossorigin="anonymous"></script>
     <!-- Vanilla JS -->
     <script src="./js/script.js"></script>
+    <!-- Luxy JS -->
+    <script src="path/to/luxy.js" charset="utf-8"></script>
 </body>
 
 </html>

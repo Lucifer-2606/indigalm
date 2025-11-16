@@ -448,6 +448,9 @@ body {
 
 @media screen and (max-width:1200px) {
 
+
+
+
     /* About Section */
     .cel-img {
         margin: 0 auto;
@@ -476,6 +479,11 @@ body {
 }
 
 @media screen and (max-width:992px) {
+
+    /* Luxy */
+    .luxy-el {
+        transform: none !important;
+    }
 
     /* About Section */
     .cel-img {
