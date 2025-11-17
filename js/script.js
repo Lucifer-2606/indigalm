@@ -9,7 +9,7 @@ window.onload = function () {
     setTimeout(() => {
       loader.classList.add("onload-hidden");
       content.classList.remove("onload-hidden");
-      initCounterObserver();
+      // initCounterObserver();
     }, 500);
   }, 1000);
 };
@@ -260,22 +260,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const hearts = document.querySelectorAll(".fa-heart");
   const popup = document.getElementById("wishlistPopup");
 
-  hearts.forEach((heart) => {
-    heart.addEventListener("click", () => {
-      // Toggle heart
-      heart.classList.toggle("fa-solid");
-      heart.classList.toggle("active");
-
-      // Show popup only when item is added
-      if (heart.classList.contains("fa-solid")) {
-        showPopup("Your item added to wishlist");
-      } else {
-        showPopup("Removed from wishlist");
-      }
-    });
-  });
-
   function showPopup(message) {
+    console.log(message);
     popup.textContent = message;
     popup.classList.add("show");
 
@@ -284,6 +270,26 @@ document.addEventListener("DOMContentLoaded", () => {
       popup.classList.remove("show");
     }, 1000);
   }
+
+  hearts.forEach((heart) => {
+    console.log(heart);
+    heart.addEventListener("click", () => {
+      // Toggle heart
+      heart.classList.toggle("fa-solid");
+      heart.classList.toggle("active");
+
+      // Show popup only when item is added
+      if (heart.classList.contains("fa-solid")) {
+        showPopup("Your item added to wishlist");
+        console.log(
+          "Your Items added to wishlist",
+          heart.classList.contains("fa-solid")
+        );
+      } else {
+        showPopup("Removed from wishlist");
+      }
+    });
+  });
 
   // Add to cart
   const plusButtons = document.querySelectorAll(".bottomSwiper-right");
