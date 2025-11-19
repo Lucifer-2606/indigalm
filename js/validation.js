@@ -1,5 +1,11 @@
 window.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contactUs-form");
+  const contactPopup = document.getElementById("contact");
+
+  if (!form) {
+    console.error("Form not found. Check the class name: .contactUs-form");
+    return;
+  }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -46,14 +52,16 @@ window.addEventListener("DOMContentLoaded", () => {
       message.setCustomValidity("");
     }
 
-    // If something is invalid, trigger browser error popup
     if (!isValid) {
       form.reportValidity();
       return;
     }
 
-    // If everything is valid, submit or do what you want
-    alert("Form submitted successfully");
+    contactPopup.classList.add("show");
+    setTimeout(() => {
+      contactPopup.classList.remove("show");
+    }, 2000);
+
     form.reset();
   });
 });
